@@ -1,0 +1,4 @@
+OPPO_PRODUCT_PAGE_TITLE = 'OPPO A83 ( 16 GB Storage, 2 GB RAM ) Online at Best Price On Flipkart.com'
+SIXTEEN_GB_SPEC = '16 GB ROM'
+PINCODE = '122002'
+DELIVERY_DATE_TEXT = 'Delivery by'
