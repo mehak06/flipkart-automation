@@ -16,7 +16,7 @@ Verify User is redirected to Cart Page after adding Oppo Mobile Phone to Cart
     title should be      ${CART_PAGE_TITLE}
     location should be   ${CART_PAGE_URL_GoToCart}
 
-Click on Flipkart Main Icon on Cart Page and Verify User redirects to Home Page
+Click on Flipkart Main Icon and Verify User redirects to Home Page
     ${KEYWORD_STATUS}  run keyword and return status  wait until keyword succeeds  2x  1sec  click element  ${FLIPKART_LOGO}
     run keyword if     ${KEYWORD_STATUS}    log to console    On Cart Page Clicked on Flipkart Main Icon so that user redirects to Home Page!!     ELSE   fail  Failed to Click on Flipkart Main Icon and User cannot redirect to Home Page now. Please check <---------- .......... ERROR !!
     Verify Title and URL of Flipkart Home Page
@@ -59,12 +59,14 @@ Verify if Delivery is Free then Product Price is Payable Amount and Place Order
     wait until keyword succeeds  2x  1sec  click element  ${PLACE_ORDER_BUTTON_CART}
 
 Clear Cart, Logout and Close Browser
-    Click on Flipkart Main Icon on Cart Page and Verify User redirects to Home Page
+    ${KEYWORD_STATUS}  run keyword and return status  wait until keyword succeeds  2x  1sec  click element  ${FLIPKART_LOGO}
+    run keyword if     ${KEYWORD_STATUS}    log to console    Clicked on Flipkart Main Icon so that user redirects to Home Page!!     ELSE   fail  Failed to Click on Flipkart Main Icon so User cannot redirect to Home Page now. Please check <---------- .......... ERROR !!
     Verify on Clicking Cart (with product count) on Home Page User redirects to Cart Page
     ${KEYWORD_STATUS}   run keyword and return status   wait until keyword succeeds  2x  1sec  wait until element is visible    ${PLACE_ORDER_BUTTON_CART}
     run keyword if    ${KEYWORD_STATUS}    Clear cart logic    ELSE   log   No items in the cart. So, no need to remove items from cart.
     ${KEYWORD_STATUS}    run keyword and return status   wait until keyword succeeds  2x   1sec   wait until element is visible  ${LOGGED_IN_USER}
-    run keyword if   ${KEYWORD_STATUS}     Select Logout and Close Browser      ELSE  log  User is not logged into their account.
+    run keyword if   ${KEYWORD_STATUS}     Select Logout     ELSE  log  User is not logged into their account.
+    Close Browser
 
 Clear cart logic
 
@@ -83,9 +85,8 @@ Remove Product from Cart
         ${KEYWORD_STATUS}   run keyword and return status    wait until keyword succeeds  6x  2seconds  click element  ${REMOVE_BUTTON_POPUP}
         run keyword if  ${KEYWORD_STATUS}  log to console    Product is removed from Cart.     ELSE   log to console  Unable to Remove Product from Cart. Please check <---------- .......... ERROR !!
 
-Select Logout and Close Browser
+Select Logout
     Page Should Contain Element    ${LOGGED_IN_USER}
     wait until keyword succeeds  5x  1sec  mouse over   ${LOGGED_IN_USER}
     ${KEYWORD_STATUS}   run keyword and return status    wait until keyword succeeds  5x  1sec  click element    ${LOGOUT_BUTTON}
     run keyword if  ${KEYWORD_STATUS}  log to console     Click on the logout button.     ELSE   log to console  Unable to click on the logout button. Please check <---------- .......... ERROR !!
-    Close Browser

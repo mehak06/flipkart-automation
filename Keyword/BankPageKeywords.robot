@@ -3,6 +3,7 @@ Documentation    Keywords of Checkout Page
 Library          Selenium2Library
 
 Resource         ../Locator/BankPage.robot
+Resource         CommonPath_Keyword.robot
 
 *** Keywords ***
 Verify Bank Screen opens on clicking Pay Now and User takes it's Screenshot
@@ -15,3 +16,9 @@ Verify Bank Screen opens on clicking Pay Now and User takes it's Screenshot
 
     ${KEYWORD_STATUS}    run keyword and return status  Capture Page Screenshot  filename=BankScreen.png
     run keyword if    ${KEYWORD_STATUS}    log to console    Screenshot of Bank Screen is taken Successfully !!    ELSE    fail  Failed to take Screenshot of Bank Screen. Please check <---------- .......... ERROR !!
+
+After taking Screenshot of Bank Screen, User clears Cart and Logout
+    Go Back
+    ${KEYWORD_STATUS}    run keyword and return status  wait until keyword succeeds  2x  1sec  Go Back
+    run keyword if    ${KEYWORD_STATUS}        log to console     User goes back to Cart Page !!     ELSE   fail  Failed to go back to Cart Page. Please check <---------- .......... ERROR !!
+    Clear Cart, Logout and Close Browser

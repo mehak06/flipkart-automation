@@ -1,6 +1,5 @@
 *** Variables ***
 
-#Home Page
 #${CANCEL_LOGIN_POPUP}                   xpath=//button[@class='_2AkmmA _29YdH8']
 ${CANCEL_LOGIN_POPUP}                   css=button._2AkmmA._29YdH8
 #${LOGIN_POPUP}                          xpath=//div[@class="_32LSmx"]

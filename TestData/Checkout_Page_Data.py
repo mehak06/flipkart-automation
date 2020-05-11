@@ -1,2 +1,0 @@
-MOBILE_NUM = '8427844662'
-PASSWORD = 'shadowfax'

@@ -23,7 +23,7 @@ Start Timer and Launch Browser
 Verify Title and URL of Flipkart Home Page
     ${KEYWORD_STATUS}    run keyword and return status  Location should be  ${URL}
     run keyword if    ${KEYWORD_STATUS}        log to console     User is on Flipkart Home Page !!     ELSE   fail  Failed to go to Flipkart Home Page. Please check <---------- .......... ERROR !!
-    wait until keyword succeeds  2x  1sec  title should be  ${HOME_PAGE_TITLE}
+    wait until keyword succeeds  4x  1sec  title should be  ${HOME_PAGE_TITLE}
 
 On Home Page Login Pop-up opens and is closed by User
     wait until keyword succeeds  2x  1sec  wait until element is visible       ${LOGIN_POPUP}

@@ -4,8 +4,6 @@ Library          Selenium2Library
 
 Resource         ../Locator/CheckoutPage.robot
 
-Variables        ../TestData/Checkout_Page_Data.py
-
 *** Keywords ***
 Verify on Clicking Place Order on Cart, User is redirected to Checkout Page and Login/Sign Up is shown
     ${KEYWORD_STATUS}  run keyword and return status  Location should be  ${CHECKOUT_PAGE_URL}
